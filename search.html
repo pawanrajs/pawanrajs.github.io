@@ -26,11 +26,11 @@
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
     <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
-     <title>Jump! | Pawanraj Sadhwani </title>
+     <title> Search | Pawanraj Sadhwani  </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width"> </head>
 
-<body class=" loading">
+<body class="no-sidebar loading">
 
 
 
@@ -50,7 +50,7 @@
                          <li >
                             <a href="/category/conversations-with-myself">Conversations with myself</a>
                         </li>
-                          <li class="active" >
+                          <li >
                             <a href="/category/personal">Personal</a>
                         </li>
                           <li >
@@ -75,47 +75,36 @@
         </nav>
     </header>
 
-<!-- Main -->
+
 <article id="main">
 
-    <header class="special container">
-        <span class="icon fa-smile-o"></span>
-        <h2>Jump!</h2>
-        <!-- add page sub title here -->
-        <p>
-            16/Sep/2010 |
-            <a href="/category/personal">Personal</a>
-        </p>
-        <p class="tags">
-            <i class="fa fa-tags" aria-hidden="true"></i> |             <a href="/tag/happiness">happiness</a> |             <a href="/tag/life">life</a> |             <a href="/tag/personal">personal</a> |             <a href="/tag/musings">musings</a> |          </p>
+  <header class="special container">
+      <span class="icon fa-search"></span>
+      <h2>Search</h2>
+  </header>
 
-    </header>
+  <!-- One -->
+  <section class="wrapper style4 container">
 
-    <!-- One -->
-    <section class="wrapper style4 container">
+      <!-- Content -->
+      <div class="content">
+          <section>
+            <form action="search">
+              <div class="tipue_search_group">
+                  <input type="text" class="search-query" id="tipue_search_input" placeholder="Search" name="q" required onsubmit="return validateForm(this.elements['q'].value);">
+                  <button type="submit" class="button special search-button tipue_search_button">
+                      <div class="tipue_search_icon">&#9906;</div>
+                  </button>
+              </div>
+          </form>
 
-        <!-- Content -->
-        <div class="content">
-            <section>
-                <!-- <a href="#" class="image feature"><img src="images/pic04.jpg" alt="" /></a> -->
-                <p><p>Reflecting on my life the last few days, usually left me slightly saddened. It sometimes felt like God is in one of His moods and I'm the ant who is caught under His magnifying glass. The idea of a trip to Mandvi beach was therefore exciting (as all trips to beaches are) and daunting at the same time.</p>
-<p>When I got there, the usually quiet place was buzzing. It was the 5th day of the Lord Ganesha festival, and the place was flooded with people carrying idols for <em>Visarjan</em> (the auspicious occasion idols of Lord Ganesha are immersed into water).</p>
-<p>Amidst all the humanity in the midst of festivities and ceremonies bidding Lord Ganesha farewell, amidst all the singing, dancing and colour, amidst those rickety rides, stalls of street food, and men offering you camel rides, was a family...</p>
-<p>Perhaps the high-point of their day was getting a photographer to capture the family and their Ganesha idols. There was a family photo, and then the photo of their little two year old kid. The kid who wouldn't wear sunglasses. All his mother wanted was for him to wear sunglasses long enough to take a photo. And all that this little guy wanted was to take them off. And between bouts of laughter, exasperation, crying and cajoling, the mother's mission was finally accomplished.</p>
-<p>The whole episode lasted about 10 minutes, but it left me thinking for much longer...</p>
-<p>These were people for whom that 10 minute period they spent trying to get take a picture of their kid with sunglasses was the only happiness of the day. This was a kid who will perhaps only ever wear sunglasses in a photo. When these people got home, they were perhaps going to worry about where their next meal was going to come from, or how they'll find means to make sure their child got treated for his sickness.</p>
-<p>And yet, most, with their song and dance, devotion to Lord Ganesha, and 'gulaal' on their faces were, at that time, far away from life's problems. They were just happy to be. Positive. Happy. Alive. Everyone of them - from the guy who went the farthest in the water with the Ganesh idol, to the smiling, toothless, old lady whose only protection against the sun was a broken umbrella and a wet cloth.</p>
-<p>While I with my digital camera and expensive glares, was lamenting how life had been unfair.</p>
-<p>Perhaps it was time to take stock - and be grateful. Maybe God hasn't been so unfair on me after all. He's been good to me. And while I may be His guinea pig sometimes, it's only because He gives me special attention. I don't joke with people I don't feel connected to. Perhaps He is the same.</p>
-<p>It's funny how little things you experience change how you view the world...</p>
-<p>Lord Ganesha is the deity we traditionally pray to before we embark on anything new. And here I was, surrounded my SO MANY idols of Lord Ganesha... realizing how fortunate I was...</p>
-<p>Perhaps, this IS a sign. It IS time. For new beginnings. For a new outlook. For a stronger belief. Perhaps it is time to take the leap... the leap of faith...</p></p>
-            </section>
-        </div>
+            <div id="tipue_search_content"></div>
+          </section>
+      </div>
 
-    </section>
+  </section>
 
-    <!-- Two -->
+  <!-- Two -->
 <section class="wrapper style1 container special">
     <h3>Recent Posts</h3>
     <div class="row">
@@ -176,8 +165,7 @@
     </div>
 </section>
 </article>
-
-  <!-- Footer -->
+ <!-- Footer -->
 <footer id="footer">
 
 <ul class="icons">
@@ -196,6 +184,20 @@
 
 </footer>    
     <!-- add scripts for search here in search.html -->
+    <script src="/tipuesearch_content.js"></script>
+    <script type="text/javascript" src="/./tipuesearch/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="/./tipuesearch/tipuesearch.min.js"></script>
+    
+    <script>
+
+    $(document).ready(function() {
+      $('#tipue_search_input').tipuesearch({
+        'show': 10,
+        'newWindow': false,
+        'contentLocation': '/tipuesearch_content.json'
+      });
+    });
+    </script>
 
 </body>
 

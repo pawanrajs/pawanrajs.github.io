@@ -876,7 +876,7 @@ table.default thead {
 #banner {
     background-attachment: scroll, scroll, scroll, fixed;
     background-color: #645862;
-    background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/banner.jpg");
+    background-image: url("images/light-bl.svg"), url("images/light-br.svg"), url("images/overlay.png"), url("../images/banner-dubai.jpg");
     background-position: bottom left, bottom right, top left, top center;
     background-repeat: no-repeat, no-repeat, repeat, no-repeat;
     background-size: 25em, 25em, auto, cover;
@@ -909,7 +909,7 @@ table.default thead {
     display: inline-block;
     border-bottom: solid 2px;
     border-top: solid 2px;
-    margin: 0 0 2em 0;
+    margin: 0 0 1em 0;
     padding: 3px 0 3px 0;
 }
 
