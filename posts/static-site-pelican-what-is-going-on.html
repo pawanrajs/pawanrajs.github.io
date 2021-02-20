@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
     <!--[if lte IE 8]><link rel="stylesheet" href="/css/ie/v8.css" /><![endif]-->
     <!--[if lte IE 9]><link rel="stylesheet" href="/css/ie/v9.css" /><![endif]-->
-     <title>Reasonable... | Pawanraj Sadhwani </title>
+     <title>Building My Static Site with Pelican - 1 | Pawanraj Sadhwani </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width"> </head>
 
@@ -56,10 +56,10 @@
                           <li >
                             <a href="/category/reviews">Reviews</a>
                         </li>
-                          <li class="active" >
+                          <li >
                             <a href="/category/scribbles">Scribbles</a>
                         </li>
-                          <li >
+                          <li class="active" >
                             <a href="/category/technology">Technology</a>
                         </li>
                      </ul>
@@ -79,15 +79,15 @@
 <article id="main">
 
     <header class="special container">
-        <span class="icon fa-pencil"></span>
-        <h2>Reasonable...</h2>
+        <span class="icon fa-code"></span>
+        <h2>Building My Static Site with Pelican - 1</h2>
         <!-- add page sub title here -->
         <p>
-            31/Jul/2011 |
-            <a href="/category/scribbles">Scribbles</a>
+            20/Feb/2021 |
+            <a href="/category/technology">Technology</a>
         </p>
         <p class="tags">
-            <i class="fa fa-tags" aria-hidden="true"></i> |             <a href="/tag/disappointment">disappointment</a> |             <a href="/tag/life">life</a> |             <a href="/tag/story">story</a> |          </p>
+            <i class="fa fa-tags" aria-hidden="true"></i> |             <a href="/tag/pelican">pelican</a> |             <a href="/tag/python">python</a> |             <a href="/tag/jinja">jinja</a> |             <a href="/tag/static-site">static site</a> |             <a href="/tag/html">html</a> |             <a href="/tag/css">css</a> |             <a href="/tag/technology">technology</a> |             <a href="/tag/series">series</a> |          </p>
 
     </header>
 
@@ -98,15 +98,39 @@
         <div class="content">
             <section>
                 <!-- <a href="#" class="image feature"><img src="images/pic04.jpg" alt="" /></a> -->
-                <p><p>His feet pounded the pavement. And thoughts pounded away at his head.</p>
-<p>Age and stress had caught up with him, and exercise had been advised. So, he had started running. After all, he had a long way to go - many responsibilities to fulfil. Keeping fit was the reasonable thing to do.</p>
-<p>Reasonable. It was a word that defined him. It was the word that had defined his life.</p>
-<p>In school, he found he had a way with words. He dreamt of being a writer. But a writer's life was not predictable. It did not guarantee a well-paying, respectable job, said the parents. He had to be reasonable about this, they told him. He enrolled to become an engineer. It was the reasonable thing to do.</p>
-<p>There he found that buildings fascinated him. He decided he would open his own design firm when he graduated. But it was risky, everyone said. Surely, any reasonable person would not undertake a risky venture like that? And he <em>was</em> a reasonable person. So, he applied for that government job instead.</p>
-<p>He fell in love. Parents were not convinced. He wanted to try and convince them. Then he wanted to run away with her and start a new life - just the two of them. Don't be foolish, she said. Life doesn't work that way. He must let this go - he'll get over the heartbreak, she told him. It had to end. They must not talk anymore - it was not the right thing to do, she said. And so he let it go - let her go. After all, she was being reasonable.</p>
-<p>He didn't want to marry any more. It wouldn't be fair to his partner, he thought. Parents told him that was stupid. He couldn't possibly spend all his life alone, they said. He'd learn to love the girl he married. He should not wait too long - because he'd be too old then. Be reasonable, they said. And so, he married a girl they chose.</p>
-<p>And now, forty reasonable years later, he had a reasonably successful marriage, a comfortable life, and a decent social standing. His friends thought he was a wonderful person. He was the model son of his proud parents. To any reasonable person, he was successful. He had no reason to be anything but happy.</p>
-<p>And there he was. Running. And he wanted to keep running. He wanted to run away from it all. But he was reasonable. And tired. He turned the corner, on the road towards home.</p></p>
+                <p><h2>What are you even talking about?</h2>
+<p>In a traditional setup, a request recieved by the web-server (like NGINX) is forwarded to the Content Management System (CMS, like Wordpress). The CMS uses a number of templates, and data from a site database to <em>build</em> an HTML page specific to the request, and return to the user. This allows specifying dynamic behaviours based on user inputs.</p>
+<p>A static site, by contrast, is a combination of HTML, CSS (Cascading Style Sheets), and JavaScript (for dynamic behaviour on the client), stored as simple files and served directly by a web-server or content delivery network.</p>
+<h2>So why build static sites?</h2>
+<h3>Low Complexity aka I don't know much</h3>
+<p>Traditional CMS based webhosting requires, in addition to a webserver, a CMS to create HTML pages, plugins to provide functionality, knowledge of a coding language, and a database for the CMS. By contrast, a static site is just a collection of HTML pages, JavaScript and CSS on a webserver - way less for my brain to comprehend and be confused by.</p>
+<h3>Low Cost aka I am cheap</h3>
+<p>Services like S3 or GitHub Pages make hosting costs practically free for low traffic sites (besides the cost of buying a domain). I chose Github Pages for my site, which means no money spent to serve the three people who visit my site. </p>
+<h3>Maintainability aka I am lazy</h3>
+<p>The content of a static website is stored as a collection of marked up text files. This means backups are as easy as a source-control system (yay Github!). Updating the content is as simple as firing up a text editor. Bulk changes and searches within the content are easy to implement. And it is easy to convert from markdown to a different format if desired. All this in addition to avoiding maintenance of the database, CMS and server.</p>
+<h3>Security aka I am paranoid</h3>
+<p><a href="https://www.cvedetails.com/vulnerability-list/vendor_id-2337/product_id-4096/">Every out of date plugin, (esp. third party plugins), unpatched database and server is a potential attack surface</a>. Code that I write is probably only going to increase points of infiltration. And I don't want your data, or my data exposed to the world. </p>
+<h3>Speed aka I am impatient</h3>
+<p>Serving a static site is extremely fast because all the web server needs to do is return a file. Site optimization (minification, image optimizations etc) can be performed before deploying, to further reduce bandwidth needs (something I will explore later in the series). A CMS must build pages from scratch using content from the database. Plugins add additional time to this operation.</p>
+<h3>A Project aka I want to be cool</h3>
+<p>I was looking for a project to combine a bunch of concepts which I think I will need going forward, and having a website that I can futz around with to be cool seemed like fun.</p>
+<h2>Okay, okay.. So what now?</h2>
+<p>Well, what we will use is a Static Site Generator (SSG) to do this for us. A SSG is an <strong>environment / platform</strong> that combines content written in a <strong>markup language</strong> (e.g Markdown) with <strong>pre-created templates</strong> (written utilizing a templating engine like Jinja), to produce HTML that you can serve on your site. </p>
+<p>SSGs are an alternative to the traditional CMS in that once you build the scaffolding that is the theme of your site - all you worry about is the content.</p>
+<p><img alt="Static Site Generator" src="/images/ssg.jpg"></p>
+<p>Popular static site generators include <a href="https://jekyllrb.com/">Jekyll (Ruby)</a>, <a href="https://blog.getpelican.com/">Pelican (Python)</a>, <a href="https://gohugo.io/">Hugo (Go)</a> and <a href="https://metalsmith.io/">Metalsmith (JS)</a> — see <a href="https://jamstack.org/generators/">StaticGen</a> for many more options.</p>
+<p>For our purposes, we will use <a href="https://blog.getpelican.com/">Pelican</a> because:
+1. It is written in <a href="https://www.python.org/">Python</a> which I wanted to get more familiar with.
+2. It uses <a href="https://palletsprojects.com/p/jinja/">Jinja2</a> for templating - which I am at least vaguely aware of how to use.
+3. It supports content written in <a href="https://daringfireball.net/projects/markdown/">Markdown</a> which I use to write content.
+4. There are plenty of </p>
+<h2>A Word of Caution</h2>
+<p>Static site generators may seem like a perfect compromise between the complexity of a CMS and the drudgery of a hand-coded static site, but it is not for everyone.</p>
+<p>If you are NOT technically minded, do not have or wish to gain ANY development expertise, hate Command Line Interface, and can't be bothered to trawl through StackOverflow while hating yourself for why a specific plugin doesn't work or why your site won't deploy or page won't render - perhaps you are better off with a Wordpress kind of setup.</p>
+<p>Me - I chose to do this because I liked the challenge (and possibly because I hate myself) and wanted to work my long disused technical muscle. It gave me a chance to learn a few new tricks and refresh some old ones. Your mileage may vary.</p>
+<p>Not to mention: a static site does not have server-side functions (forms, comments, logins). There are implementations for comments, search etc, but with limitations. Large websites, with teams of people working on a single update may not jive well with static websites, and the last thing you want to do is hack together a <em>sort of</em> a CMS that you then have to maintain. </p>
+<p>So choose your poison carefully.</p>
+<p>That being said - let's get cracking! In the next part we will start with installing Pelican, and setting up for the fun stuff!</p></p>
             </section>
         </div>
 

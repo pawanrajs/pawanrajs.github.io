@@ -42,7 +42,7 @@
         <nav id="nav">
             <ul>
                 <!-- <li class="current"><a href="index.html">Welcome</a></li> -->
-                <li><a href="search">Search</a></li>
+                <li><a href="/search">Search</a></li>
                 <li><a href="/archives">Archives</a></li>
                 <li class="submenu">
                     <a href="/archives">Blog</a>
@@ -89,7 +89,7 @@
       <!-- Content -->
       <div class="content">
           <section>
-            <form action="search">
+            <form action="/search">
               <div class="tipue_search_group">
                   <input type="text" class="search-query" id="tipue_search_input" placeholder="Search" name="q" required onsubmit="return validateForm(this.elements['q'].value);">
                   <button type="submit" class="button special search-button tipue_search_button">
@@ -108,6 +108,24 @@
 <section class="wrapper style1 container special">
     <h3>Recent Posts</h3>
     <div class="row">
+        <div class="4u">
+
+            <section>
+                <span class="icon feature fa-code"></span>
+                <header>
+                    <a href="/posts/static-site-pelican-what-is-going-on" rel='bookmark'>
+                        <h3>Building My Static Site with Pelican - 1</h3>
+                    </a>
+                </header>
+                <p>What are you even talking about? In a traditional setup, a request recieved by the web-server (like NGINX) is forwarded to the Content Management System (CMS, like Wordpress). The CMS</p>
+                <footer>
+                    <ul class="buttons">
+                        <li><a href="/posts/static-site-pelican-what-is-going-on" class="button small">Read More</a></li>
+                    </ul>
+                </footer>
+            </section>
+
+        </div>
         <div class="4u">
 
             <section>
@@ -139,24 +157,6 @@
                 <footer>
                     <ul class="buttons">
                         <li><a href="/posts/so-it-begins" class="button small">Read More</a></li>
-                    </ul>
-                </footer>
-            </section>
-
-        </div>
-        <div class="4u">
-
-            <section>
-                <span class="icon feature fa-frown-o"></span>
-                <header>
-                    <a href="/posts/not-today" rel='bookmark'>
-                        <h3>Not Today</h3>
-                    </a>
-                </header>
-                <p>Something is troubling you. You do not know what it is. You cannot pinpoint it. You try to turn the dial to bring into sharp focus the spectrum of emotions so you can hear them clearly -</p>
-                <footer>
-                    <ul class="buttons">
-                        <li><a href="/posts/not-today" class="button small">Read More</a></li>
                     </ul>
                 </footer>
             </section>

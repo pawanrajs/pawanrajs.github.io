@@ -42,7 +42,7 @@
         <nav id="nav">
             <ul>
                 <!-- <li class="current"><a href="index.html">Welcome</a></li> -->
-                <li><a href="search">Search</a></li>
+                <li><a href="/search">Search</a></li>
                 <li><a href="/archives">Archives</a></li>
                 <li class="submenu">
                     <a href="/archives">Blog</a>
@@ -94,6 +94,15 @@
                     <section>
                         <!-- <a href="#" class="image feature"><img src="images/pic03.jpg" alt="" /></a> -->
                         <header>
+                            <a href="/posts/static-site-pelican-what-is-going-on">
+                                <h3>Building My Static Site with Pelican - 1</h3>
+                            </a>
+                        </header>
+                        <p>What are you even talking about? In a traditional setup, a request recieved by the web-server (like NGINX) is forwarded to the Content Management System (CMS, like Wordpress). The CMS uses a number of templates, and data from a site database to build an HTML page specific to the request …</p>
+                    </section>
+                    <section>
+                        <!-- <a href="#" class="image feature"><img src="images/pic03.jpg" alt="" /></a> -->
+                        <header>
                             <a href="/posts/oooh-shiny">
                                 <h3>Oooh Shiny!</h3>
                             </a>
@@ -126,15 +135,6 @@
                             </a>
                         </header>
                         <p>It's been an interesting three months... My folks came to visit me, here in the States. While my father had been to the USA before, it was a first for mom. I saw them after a year, so that was nice. We visited a few places, so that was nice …</p>
-                    </section>
-                    <section>
-                        <!-- <a href="#" class="image feature"><img src="images/pic03.jpg" alt="" /></a> -->
-                        <header>
-                            <a href="/posts/we-all-need-the-eggs">
-                                <h3>We all Need the Eggs...</h3>
-                            </a>
-                        </header>
-                        <p>My parents have been here for the last couple of weeks. It's nice to see them after about a year. Not because there is so much to talk about but even in silence, there is a sense of belonging. The house feels like a home... There's an interesting Woody Allen …</p>
                     </section>
  
 <div class="row ">
@@ -177,7 +177,7 @@
                                 <h3>Search</h3>
                             </header>
                             <span>
-                                <form action="search">
+                                <form action="/search">
                                     <div class="tipue_search_group">
                                         <input type="text" class="search-query" id="tipue_search_input" placeholder="Search" name="q" required onsubmit="return validateForm(this.elements['q'].value);">
                                         <button type="submit" class="button special search-button tipue_search_button">
@@ -193,18 +193,6 @@
                             <h3>All Tags</h3>
                         </header>
 <ul class="tagcloud">
-    <li class="tag-4 list-group-item">
-        <a href="/tag/adhd">
-            adhd
-                    <span class="badge">(1)</span>
-            </a>
-    </li>
-    <li class="tag-4 list-group-item">
-        <a href="/tag/beginning">
-            beginning
-                    <span class="badge">(1)</span>
-            </a>
-    </li>
     <li class="tag-2 list-group-item">
         <a href="/tag/book">
             book
@@ -223,12 +211,6 @@
                     <span class="badge">(2)</span>
             </a>
     </li>
-    <li class="tag-4 list-group-item">
-        <a href="/tag/depression">
-            depression
-                    <span class="badge">(1)</span>
-            </a>
-    </li>
     <li class="tag-2 list-group-item">
         <a href="/tag/diary">
             diary
@@ -241,12 +223,6 @@
                     <span class="badge">(3)</span>
             </a>
     </li>
-    <li class="tag-4 list-group-item">
-        <a href="/tag/experiment">
-            experiment
-                    <span class="badge">(1)</span>
-            </a>
-    </li>
     <li class="tag-2 list-group-item">
         <a href="/tag/facebook">
             facebook
@@ -254,8 +230,14 @@
             </a>
     </li>
     <li class="tag-4 list-group-item">
-        <a href="/tag/feelings">
-            feelings
+        <a href="/tag/html">
+            html
+                    <span class="badge">(1)</span>
+            </a>
+    </li>
+    <li class="tag-4 list-group-item">
+        <a href="/tag/jinja">
+            jinja
                     <span class="badge">(1)</span>
             </a>
     </li>
@@ -277,10 +259,22 @@
                     <span class="badge">(3)</span>
             </a>
     </li>
+    <li class="tag-4 list-group-item">
+        <a href="/tag/pelican">
+            pelican
+                    <span class="badge">(1)</span>
+            </a>
+    </li>
     <li class="tag-2 list-group-item">
         <a href="/tag/personal">
             personal
                     <span class="badge">(2)</span>
+            </a>
+    </li>
+    <li class="tag-4 list-group-item">
+        <a href="/tag/python">
+            python
+                    <span class="badge">(1)</span>
             </a>
     </li>
     <li class="tag-2 list-group-item">
@@ -301,10 +295,16 @@
                     <span class="badge">(2)</span>
             </a>
     </li>
+    <li class="tag-4 list-group-item">
+        <a href="/tag/static-site">
+            static site
+                    <span class="badge">(1)</span>
+            </a>
+    </li>
     <li class="tag-2 list-group-item">
         <a href="/tag/technology">
             technology
-                    <span class="badge">(2)</span>
+                    <span class="badge">(3)</span>
             </a>
     </li>
     <li class="tag-2 list-group-item">
