@@ -104,7 +104,7 @@
 <p>The security focus in cloud environments is on controlling access, protecting services and systems within the cloud, and maintaining confidentiality and integrity of your data in the cloud. Additionally, you need a well-defined and practiced process for responding to security incidents not just to achieve business objectives and preventing loss, but also to comply with regulatory obligations.</p>
 <p>Architecting security for cloud relies on updating your people, modifying the IT processes and refreshing the technology stack based on the below principles and best practices:</p>
 <h2>1. Implement a Strong Identity and Access Management foundation</h2>
-<p>Identity and Access Management are key parts of an information security program, ensuring that only authorized and authenticated users are able to access your resources, and only in the manner that you intend. The general security principle to follow is to implement the principle of least privilege and enforce separation of duties with appropriate authorization for each interaction with your cloud resources. </p>
+<p>Identity and Access Management are key parts of an information security program, ensuring that only authorized and authenticated users are able to access your resources, and only in the manner that you intend. The general security principle to follow is to implement the principle of least privilege and enforce separation of duties with appropriate authorization for each interaction with your cloud resources. Specific steps you could take are:</p>
 <ul>
 <li><strong>Credentialing and authenticating users AND programs:</strong> Credentials must be granted to users, as well as programs that use APIs to call cloud services, and should not be shared between any user or system. Best practices including password requirements and enforced multi-factor authentication should be the standard. Programmatic access should be performed using short-duration and limited-privilege credentials like tokens and keys. This reduces the likelihood of a large scale compromise if one of the programs, or one of the elements of a multifactor authentication chain is breached.</li>
 <li><strong>Identifying Access Rights and Authorization:</strong> The first step in defining access rights is to define the organizational hierarchy and principals (users, groups, and roles) with clear delineation of assets, services and data required. Granular policies can then be built aligned with these principles. Each role, as well as cloud storage/content delivery service may have its own access policies – to properly secure access not just by users but also by programs</li>
@@ -112,18 +112,22 @@
 </ul>
 <h2>2. Enable traceability through Detective Controls</h2>
 <p>Detective controls are an essential part of the governance framework, and can be used to monitor, alert, and audit actions and changes to your environment in real time to identify potential security threats or incidents. They support not just security, but also feed into application quality and compliance processes. They help to analyze, identify and predict anomalous activity. </p>
-<p>Most CSPs provide service level logging and metrics, as well as alerting facilities (when thresholds are crossed) for services they expose.  You should either use these services to define logging levels, log retention lifecycle (including where the data will be preserved and archived). You can use these and analyze logs to:
-- Establish operational baselines
-- Gain visibility on events and identify security events and potential threats
-- Audit to ensure that policies are calibrated as well as enforced correctly
-- Fulfill regulatory or legal requirements. </p>
+<p>Most CSPs provide service level logging and metrics, as well as alerting facilities (when thresholds are crossed) for services they expose.  You should either use these services to define logging levels, log retention lifecycle (including where the data will be preserved and archived). You can use these and analyze logs to:</p>
+<ul>
+<li>Establish operational baselines</li>
+<li>Gain visibility on events and identify security events and potential threats</li>
+<li>Audit to ensure that policies are calibrated as well as enforced correctly</li>
+<li>Fulfill regulatory or legal requirements. </li>
+</ul>
 <p>A periodic cloud security audit of your environment will ensure that you recheck for any configuration errors, sharing risks, files containing sensitive information, and more, that could creep into your environment.</p>
 <h2>3. Apply security at all layers of the infrastructure</h2>
-<p>Rather than just focusing on protection of a single outer layer (perimeter security), cloud security requires a defense-in-depth approach with other security controls. Any security model for the cloud should focus on:
-- Protecting the perimeter with firewalls and packet inspection tools
-- Protecting the network from threats internal and external to it
-- Protecting compute resources such as APIs, servers, and database services in the cloud
-- Protecting data (more on this later)</p>
+<p>Rather than just focusing on protection of a single outer layer (perimeter security), cloud security requires a defense-in-depth approach with other security controls. Any security model for the cloud should focus on:</p>
+<ul>
+<li>Protecting the perimeter with firewalls and packet inspection tools</li>
+<li>Protecting the network from threats internal and external to it</li>
+<li>Protecting compute resources such as APIs, servers, and database services in the cloud</li>
+<li>Protecting data (more on this later)</li>
+</ul>
 <p>As with traditional security, enforcing boundary protection, monitoring points of ingress and egress, and comprehensive logging, monitoring, and alerting are still essential to effective information security.</p>
 <p>Additionally, protecting the network in the cloud starts with creating a Private Cloud, and appropriately defining the topology – including gateways, routing tables and private and public subnets. Additional Network Access Control Lists (ACLs) and security groups can be deployed to provide multiple layers of protection to the network as well as compute resources. </p>
 <p>Device policies may have to be enforced to combat the entropy introduced into the network by increasing trend of BYOD and work-from-home situations</p>
@@ -132,28 +136,34 @@
 <p>Data is the single most important area of security in the cloud. Usually, the CSP has no ownership of data beyond providing resilient storage, leaving the security almost entirely in your hands. In addition, data breaches invite not only operational hazards, but also have compliance, legal and reputational ramifications.</p>
 <p>Before establishing any architectural practices, it is important to classify data to categorize it based on sensitivity. You can then use storage policies, organizational design and network segregation to isolate data and limit access. </p>
 <p>Regulatory requirements like GDPR may necessitate storage of data in specific regions. It is important to understand how your CSP deals with data across their infrastructure to ensure your operational needs are met.</p>
-<p>Encryption should be used to protect data in transit (using TLS) and at rest (using keys), and render it unintelligible to unauthorized access. Most CSPs will provide tools to facilitate encryption:
-- Facility to encryption file storage and databases at rest
-- Services to manage keys used to encrypt data. 
-- Logging of data / file access requests and changes</p>
+<p>Encryption should be used to protect data in transit (using TLS) and at rest (using keys), and render it unintelligible to unauthorized access. Most CSPs will provide tools to facilitate encryption:</p>
+<ul>
+<li>Facility to encryption file storage and databases at rest</li>
+<li>Services to manage keys used to encrypt data. </li>
+<li>Logging of data / file access requests and changes</li>
+</ul>
 <p>Versioning, can also be used as part of the larger data lifecycle management process, to protect against accidental overwrites, deletes, and similar harm.</p>
 <p>As part of your design, create mechanisms and tools to reduce or eliminate the need for direct access or manual processing of data. This reduces the risk of loss or modification and human error when handling sensitive data.</p>
 <h2>5. Automate security best practices</h2>
 <p>Given the distributed nature of cloud, automation is paramount in cloud security. Automated software-based security mechanisms enhance the ability to scale rapidly without increasing costs. It also reduces chances of errors as new resources and users are added to your organization, and helps to tackle “shadow IT” that more and more security organizations must contend with. </p>
-<p>Creating and implementing controls that are defined and managed as code in version-controlled templates, which can then be used to enforce policies is a key tenet of cloud implementation.</p>
-<p>This could be in the form of:
-- Integrated logs and metrics with systems to automatically respond and take action.
-- Creating hardened machine images which can be automatically used to spin up new compute instances
-- Cleaning up access and ids as people and assets leave the organization
-- Automating alerts based on deviation from established operating baselines
-- Automated audits of your configuration to provide ongoing information into the security health of your cloud applications.</p>
+<p>Creating and implementing controls that are defined and managed as code in version-controlled templates, which can then be used to enforce policies is a key tenet of cloud implementation. This could be in the form of:</p>
+<ul>
+<li>Integrated logs and metrics with systems to automatically respond and take action.</li>
+<li>Creating hardened machine images which can be automatically used to spin up new compute instances</li>
+<li>Cleaning up access and ids as people and assets leave the organization</li>
+<li>Automating alerts based on deviation from established operating baselines</li>
+<li>Automated audits of your configuration to provide ongoing information into the security health of your cloud applications.</li>
+</ul>
 <h2>6. Setup an Incident Response Process to prepare for security events</h2>
 <p>Despite your best efforts, and mature preventive and detective controls, security incidents will occur. It is important to update your incident management process to align with your move to cloud.</p>
 <p>It is important to have the ability to quickly assemble the InfoSec team, grant them access for incident analysis, as well as isolate affected compute resources.</p>
-<p>Putting in place the tools, automation and processes ahead of a security incident, then routinely practicing incident response through game days, will help you ensure that your architecture can accommodate timely investigation and recovery while minimizing the potential disruption to your organization. Some examples of such tools are:
-- Detailed Logging for important files and access changes, or capturing of forensic data when incidents are detected
-- Provisioning clean-room environments for forensics using automated templates
-- Alerts and triggers that can respond automatically through use of APIs</p>
+<p>Putting in place the tools, automation and processes ahead of a security incident, then routinely practicing incident response through game days, will help you ensure that your architecture can accommodate timely investigation and recovery while minimizing the potential disruption to your organization. Some examples of such tools are:</p>
+<ul>
+<li>Detailed Logging for important files and access changes, or capturing of forensic data when incidents are detected</li>
+<li>Provisioning clean-room environments for forensics using automated templates</li>
+<li>Alerts and triggers that can respond automatically through use of APIs</li>
+</ul>
+<h2>In Conclusion</h2>
 <p>These general principles provide a starting point to think about security in the cloud. Breaking down these principles into further actions that apply to users across IT, management and infrastructure teams can make the transition to cloud seamless. </p>
 <p>Furthermore, this shift in mindset from the traditional security model to a more distributed model requires reeducating not just the security team but the entire organization. This training in addition to an action plan to implement the principles can ensure security isn’t an afterthought but part of the culture in this new paradigm.</p></p>
             </section>
