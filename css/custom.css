@@ -52,41 +52,6 @@ div.pagination-right {
     width: 2em;
 }
 
-/* Mobile screens */
-@media screen and (max-width: 736px) {
-
-    /* Pagination */
-    div.pagination {
-        margin-top: 20px;
-    }
-
-    /* Banner */
-    #banner .inner header h2 {
-        font-size: 1.3em;
-    }
-
-    #banner .inner p {
-        text-align: center;
-        font-size: 0.8em;
-        letter-spacing: 0.08em;
-    }
-
-
-    /* Share this */
-    #post-share-links a{
-        margin: 0 0.1em;
-    }
-
-    p#post-share-links {
-        padding-top: 1.0em;
-    }
-
-    /* Comment container */
-    .comment-container {
-        width: 28rem;
-    }
-}
-
 /******************** ICONS FOR SOCIAL ***********************/
 
 /* Social Icons for linkedin and email */
@@ -188,6 +153,7 @@ button.search-button {
 .tipue_search_content_url, .tipue_search_content_debug {
     font-size: 80%
 }
+
 
 /* Blog body specific formatting */
 
@@ -355,6 +321,46 @@ ul.tagcloud li.list-group-item span.badge {
     margin-bottom: 0.7em;
 
 }
+
+em {
+    font-style: italic;
+}
+
+/* Mobile screens */
+@media screen and (max-width: 736px) {
+
+    /* Pagination */
+    div.pagination {
+        margin-top: 20px;
+    }
+
+    /* Banner */
+    #banner .inner header h2 {
+        font-size: 1.3em;
+    }
+
+    #banner .inner p {
+        text-align: center;
+        font-size: 0.8em;
+        letter-spacing: 0.08em;
+    }
+
+
+    /* Share this */
+    #post-share-links a{
+        margin: 0 0.1em;
+    }
+
+    p#post-share-links {
+        padding-top: 1.0em;
+    }
+
+    /* Comment container */
+    .comment-container {
+        width: 28rem;
+    }
+}
+
 
 /*
 .blog-tags ul {
